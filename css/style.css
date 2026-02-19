@@ -284,9 +284,9 @@ body {
 /* ! ********************* Main Section Started ********************* */
 
 .section-main {
-  /*border: 1px solid var(--bg-red);*/
+  border: 1px solid var(--bg-red);
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 56px);
 
   display: flex;
 }
@@ -296,10 +296,12 @@ body {
 /* ! ********************* Sidebar Started ********************* */
 
 aside {
-  /*border: 1px solid var(--bg-red);*/
-  width: 16%;
-  height: auto;
+  border: 1px solid var(--text-white);
 
+  width: 16%;
+  height: 100%;
+
+  overflow-y: auto;
   display: none;
 }
 
@@ -308,17 +310,19 @@ aside {
 /* ! ********************* Videos Section Started ********************* */
 
 .main-videos {
-  /*border: 1px solid var(--bg-red);*/
+  /* border: 1px solid var(--bg-red); */
   width: 100%;
   height: 100%;
 
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1.3fr repeat(8, 1fr);
+  grid-template-rows: 1fr 1.5fr repeat(8, 1fr);
+
+  overflow-y: auto;
 }
 
 .video-main {
-  /*border: 1px solid var(--bg-red);*/
+  /* border: 1px solid var(--text-white); */
   width: 100%;
   height: 100%;
 
@@ -327,7 +331,7 @@ aside {
 
 .video-card {
   /*border: 1px solid var(--bg-red);*/
-  width: 480;
+  width: 100%;
   aspect-ratio: 16/9;
 
   position: relative;
@@ -366,12 +370,10 @@ aside {
 }
 
 .video-details--main {
-  /*border: 1px solid var(--bg-red);*/
+  /* border: 1px solid var(--bg-red); */
   width: 100%;
-  height: 95px;
 
   display: flex;
-  align-items: center;
 
   margin-top: 10px;
 }
@@ -380,6 +382,8 @@ aside {
   /*border: 1px solid var(--bg-red);*/
   width: 10%;
   height: 100%;
+
+  display: flex;
 }
 
 .video-channel--img img {
@@ -431,10 +435,6 @@ aside {
   font-size: 14px;
 }
 
-/* .video-analytics span {
-  border: 1px solid var(--bg-red);
-} */
-
 .video-options--div {
   /*border: 1px solid var(--bg-red);*/
   width: 15%;
@@ -466,10 +466,10 @@ aside {
 
 /* ************** Shorts ************** */
 .shorts {
-  /*border: 1px solid red;*/
+  /* border: 1px solid green; */
 
   width: 100%;
-  height: 100%;
+  height: 500px;
 
   grid-column: 1/2;
   grid-row: 2/3;
@@ -481,7 +481,7 @@ aside {
 }
 
 .shorts h2 {
-  /*border: 1px solid red;*/
+  /* border: 1px solid red; */
 
   height: 40px;
 
@@ -489,21 +489,21 @@ aside {
 }
 
 .shorts h2 svg {
-  /*border: 1px solid red;*/
+  /* border: 1px solid red; */
 
   width: 40px;
   margin-left: 20px;
 }
 
 .shorts h2 span {
-  /*border: 1px solid red;*/
+  /* border: 1px solid red; */
   color: white;
 
   margin-left: 5px;
 }
 
 .shorts-main {
-  /*border: 1px solid red;*/
+  /* border: 1px solid green; */
 
   width: 100%;
   height: 90%;
@@ -516,7 +516,7 @@ aside {
 }
 
 .short-div {
-  /*border: 1px solid red;*/
+  /* border: 1px solid red; */
 
   width: 45%;
   height: 100%;
@@ -537,14 +537,14 @@ aside {
 }
 
 .short-details {
-  /*border: 1px solid red;*/
+  /* border: 1px solid red; */
 
   width: 100%;
   padding: 5px 0px;
 }
 
 .short-details h3 {
-  /*border: 1px solid red;*/
+  /* border: 1px solid red; */
   color: var(--text-white);
 
   font-size: 16px;
@@ -558,7 +558,7 @@ aside {
 }
 
 .short-details p {
-  /*border: 1px solid red;*/
+  /* border: 1px solid red; */
   color: var(--text-light-grey);
 
   font-size: 12px;
@@ -625,6 +625,10 @@ aside {
   }
 
   .item-3 {
+    display: flex;
+  }
+
+  aside {
     display: flex;
   }
 }
