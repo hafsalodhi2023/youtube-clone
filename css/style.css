@@ -49,7 +49,7 @@ body {
 }
 
 .nav-left {
-  /*border: 1px solid var(--text-white);*/
+  /* border: 1px solid var(--text-white); */
 
   width: 169px;
   height: 100%;
@@ -59,7 +59,7 @@ body {
 }
 
 .nav-left i {
-  /*border: 1px solid var(--text-white);*/
+  /* border: 1px solid var(--text-white); */
   color: var(--text-white);
 
   width: 40px;
@@ -79,14 +79,14 @@ body {
 }
 
 .nav-left svg {
-  /*border: 1px solid var(--text-white);*/
+  /* border: 1px solid var(--text-white); */
 
   margin-left: 22px;
   cursor: pointer;
 }
 
 .nav-country {
-  /*border: 1px solid var(--text-white);*/
+  /* border: 1px solid var(--text-white); */
   color: var(--text-light-grey);
 
   height: 100%;
@@ -284,11 +284,25 @@ body {
 /* ! ********************* Main Section Started ********************* */
 
 .section-main {
-  border: 1px solid var(--bg-red);
+  /* border: 1px solid var(--bg-red); */
   width: 100%;
   height: calc(100vh - 56px);
 
   display: flex;
+}
+
+.overlay {
+  background-color: black;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 1;
+  opacity: 0.6;
+}
+
+.overlay.active {
+  position: absolute;
 }
 
 /* ! ********************* Main Section Ended ********************* */
@@ -297,31 +311,72 @@ body {
 
 aside {
   /* border: 1px solid var(--text-white); */
+  background-color: var(--bg-dark-grey);
 
-  width: 16%;
+  width: 250px;
   height: 100%;
 
-  overflow-y: auto;
-  display: none;
+  display: flex;
   flex-direction: column;
-  padding: 10px;
-  gap: 15px;
+
+  position: absolute;
+  left: -250px;
+  top: 0px;
+
+  z-index: 2;
+  overflow-y: auto;
+  transition: left 0.3s ease;
+}
+
+aside.active {
+  left: 0;
+  /* box-shadow: 200px 0px 0px 50px var(--bg-dark-grey); */
+}
+
+aside > .nav-left {
+  /* border: 1px solid var(--bg-red); */
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  padding: 10px 0px 0px 13px;
 }
 
 .content-main {
   /* border: 1px solid white; */
   border-bottom: 1px solid var(--bd-light-grey);
+
   width: 100%;
-  height: 150px;
+  height: 200px;
 
   display: flex;
   flex-direction: column;
   align-items: start;
-  justify-content: space-evenly;
+  justify-content: space-around;
 
   list-style: none;
+  padding: 10px;
 }
 
+.you-main {
+  /* border: 1px solid white; */
+  border-bottom: 1px solid var(--bd-light-grey);
+  width: 100%;
+  height: 380px;
+
+  display: flex;
+  align-items: start;
+  justify-content: space-evenly;
+  flex-direction: column;
+
+  list-style: none;
+  padding: 10px;
+}
+
+.you-main li,
 .content-main li {
   /* border: 1px solid white; */
   color: white;
@@ -337,21 +392,90 @@ aside {
   cursor: pointer;
 }
 
+.you-main li:hover,
 .content-main li:hover {
   background-color: var(--bg-light-grey);
 }
 
+.you-item-icon,
 .content-item-icon {
   /* border: 1px solid white; */
 
   font-size: 20px;
 }
 
+.you-item-text,
 .content-item-text {
   /* border: 1px solid white; */
 
   font-size: 14px;
   font-weight: 100;
+}
+
+.channels-main {
+  /* border: 1px solid white; */
+  border-bottom: 1px solid var(--bd-light-grey);
+  width: 100%;
+  height: 350px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-evenly;
+
+  list-style: none;
+  padding: 10px;
+}
+
+.channels-main > li {
+  /* border: 1px solid white; */
+  color: white;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.channels-main > li:hover {
+  background-color: var(--bg-light-grey);
+}
+
+.channels-item-icon {
+  /* border: 1px solid white; */
+  width: 24px;
+  height: 24px;
+
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.channels-item-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.channels-item-text {
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.last {
+  /* border: 1px solid white; */
+
+  width: 100%;
+  height: 200px;
+  padding: 8px 20px;
+}
+
+.last p {
+  color: var(--text-light-grey);
+  font-size: 12px;
 }
 
 /* ! ********************* Sidebar Ended ********************* */
@@ -360,7 +484,7 @@ aside {
 
 .main-videos {
   /* border: 1px solid var(--bg-red); */
-  width: 84%;
+  width: 100%;
   height: 100%;
 
   display: grid;
@@ -652,6 +776,9 @@ aside {
   .nav-right > i {
     display: flex;
   }
+  .main-videos {
+    width: 100%;
+  }
 }
 
 @media (width >= 768px) {
@@ -676,10 +803,6 @@ aside {
   .item-3 {
     display: flex;
   }
-
-  aside {
-    display: flex;
-  }
 }
 
 @media (width >= 1024px) {
@@ -699,5 +822,17 @@ aside {
   .item-4,
   .item-5 {
     display: flex;
+  }
+
+  aside {
+    position: static;
+  }
+
+  aside > .nav-left {
+    display: none;
+  }
+
+  .overlay {
+    display: none;
   }
 }
